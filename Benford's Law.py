@@ -8,3 +8,5 @@ def printMenu():
           9. Quit\n
           Enter menu option (1-9)
           ''')
+
+    print("hello world")
