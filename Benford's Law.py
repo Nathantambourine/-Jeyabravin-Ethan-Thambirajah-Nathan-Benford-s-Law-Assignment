@@ -8,17 +8,11 @@ def printMenu():
           3. Exit 
           Enter menu option (1-3)
           ''')
-
-
-        
-       
-
+    
 userInput = ""
 saledata = "1"
 createchart = "2"
 exitCondition = "3"
-
-
 
 
 while userInput != exitCondition:
