@@ -28,9 +28,14 @@ while userInput != exitCondition:
         print(file.read())
         file.close()
 
-    elif userInput == createchart: 
+    if userInput == createchart: 
         
-        createchart()
+        folder = os.getcwd()
+        fileName = folder + "\\results.csv"
+        file = open(fileName, "w")
+        print(file.read())
+        file.close()
+        
 
     else:
         print("Please type in a valid option (A number from 1-3)")
