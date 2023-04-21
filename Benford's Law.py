@@ -15,7 +15,20 @@ saledata = "1"
 createchart = "2"
 exitCondition = "3"
 
-salesData = []
+
+
+while userInput != exitCondition:
+    printMenu()               
+    userInput = input();   
+
+    if userInput == saledata:        
+        folder = os.getcwd()
+        fileName = folder + "\\sales.csv"
+        file = open(fileName, "r")
+        print(file.read())
+        file.close()
+
+    salesData = []
 with open(fileName, 'r') as file:
     lines = file.readlines()[1:] # skip header row
 for line in lines:
@@ -38,17 +51,6 @@ else:
     print("The data indicates that fraud may have occurred.")  
 
 
-while userInput != exitCondition:
-    printMenu()               
-    userInput = input();   
-
-    if userInput == saledata:        
-        folder = os.getcwd()
-        fileName = folder + "\\sales.csv"
-        file = open(fileName, "r")
-        print(file.read())
-        file.close()
-
     if userInput == createchart: 
         
         folder = os.getcwd()
@@ -56,7 +58,6 @@ while userInput != exitCondition:
         file = open(fileName, "w")
         print(file.read())
         file.close()
-        
 
     else:
         print("Please type in a valid option (A number from 1-3)")
