@@ -7,29 +7,23 @@ def printMenu():
           2. Create Chart\n
           Enter menu option (1-2)
           ''')
-
-# Put your code on line 13 
+    
+# Variables 
 
 userInput = ""
 saledata = "1"
 createchart = "2"
-exitCondition = "3"
 
 
-
-while userInput != exitCondition:
-    printMenu()               
-    userInput = input();   
-
-    if userInput == saledata:        
-        folder = os.getcwd()
-        fileName = folder + "\\sales.csv"
-        file = open(fileName, "r")
-        print(file.read())
-        file.close()
+if userInput == saledata:        
+    folder = os.getcwd()
+    fileName = folder + "\\sales.csv"
+    file = open(fileName, "r")
+    print(file.read())
+    file.close()
 
     salesData = []
-with open(fileName, 'r') as file:
+with open("sales.csv" , 'r') as file:
     lines = file.readlines()[1:] # skip header row
 for line in lines:
     salesData.append(int(line.strip().split(',')[1]))
@@ -51,6 +45,8 @@ else:
     print("The data indicates that fraud may have occurred.")  
 
 
+# chart
+
     if userInput == createchart: 
         
         folder = os.getcwd()
@@ -60,9 +56,9 @@ else:
         file.close()
 
     else:
-        print("Please type in a valid option (A number from 1-3)")
+        print("Please type in a valid option (A number from 1-2)")
 
 
-print("Program Terminated")
+
 
 
