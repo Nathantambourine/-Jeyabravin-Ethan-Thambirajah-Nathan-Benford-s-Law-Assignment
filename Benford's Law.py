@@ -54,7 +54,7 @@ else:
         file = open(fileName, "w")
         print(file.read())
         file.close()
-
+        
     else:
         print("Please type in a valid option (A number from 1-2)")
 
