@@ -17,6 +17,26 @@ createchart = "2"
 exitCondition = "3"
 
 
+salesData = []
+with open(fileName, 'r') as file:
+lines = file.readlines()[1:] # skip header row
+for line in lines:
+salesData.append(int(line.strip().split(',')[1]))
+
+digit_counts = [0] * 9
+for num in sales_data:
+first_digit = int(str(num)[0])
+digit_counts[first_digit-1] += 1
+
+digit_percentages = []
+for count in digit_counts:
+percentage = count/len(sales_data)*100
+digit_percentages.append(percentage)
+
+
+    
+
+
 while userInput != exitCondition:
     printMenu()               
     userInput = input();   
