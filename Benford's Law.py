@@ -33,8 +33,11 @@ for count in digit_counts:
 percentage = count/len(sales_data)*100
 digit_percentages.append(percentage)
 
-
-    
+fraud_threshold = (29, 32)
+if fraud_threshold[0] <= digit_percentages[0] <= fraud_threshold[1]:
+print("The data indicates that fraud likely did not occur.")
+else:
+print("The data indicates that fraud may have occurred.")  
 
 
 while userInput != exitCondition:
