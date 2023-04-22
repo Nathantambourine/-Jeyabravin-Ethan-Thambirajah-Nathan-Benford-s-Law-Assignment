@@ -2,11 +2,11 @@ import os
 print(os.getcwd())
 def printMenu():
     print('''
-          Customer and Sales System\n
+          Customer and Sales System\n   
           1. Load sales data\n
           2. Create Chart\n
-          Enter menu option (1-2)
-          ''')
+          Enter menu option (1-2)  
+          ''') # Gives the user two options one to load the sale data and two to create the chart 
     
 # Variables 
 
@@ -17,7 +17,7 @@ createchart = "2"
 
 if userInput == saledata:        
     folder = os.getcwd()
-    fileName = folder + "\\sales.csv"
+    fileName = folder + "\\sales.csv" # Prints the csv file
     file = open(fileName, "r")
     print(file.read())
     file.close()
@@ -48,13 +48,19 @@ else:
 # chart
 
     if userInput == createchart: 
-        
+
+        import matplotlib as plt
+
+        plt.xlabel("Number")
+        plt.ylabel("Percent")
+        plt.show()
+
         folder = os.getcwd()
-        fileName = folder + "\\results.csv"
+        fileName = folder + "\\results.csv"         #Creates a new csv file when inputed 
         file = open(fileName, "w")
         print(file.read())
         file.close()
-        
+
     else:
         print("Please type in a valid option (A number from 1-2)")
 
